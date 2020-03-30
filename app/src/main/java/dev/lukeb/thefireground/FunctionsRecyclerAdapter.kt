@@ -39,13 +39,15 @@ class FunctionsRecyclerAdapter(private val context: Context, private val functio
 
         init {
             textView.setOnClickListener{
-                Toast.makeText(context, "Clicked on " + textView.text, Toast.LENGTH_SHORT).show()
-
                 // Intent to launch
                 // Find better way of doing this, this is terrible
                 if(textView.text == "Percentages Calculator"){
                     val intent: Intent = Intent(context, PercentagesCalculatorActivity::class.java)
                     startActivity(context, intent, null)
+                }
+
+                if(textView.text == "Submit new feature request"){
+                    Toast.makeText(context, "Contact Luke in order to make a new feature request", Toast.LENGTH_SHORT).show()
                 }
             }
         }

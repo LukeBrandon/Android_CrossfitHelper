@@ -41,6 +41,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun addFunctions(){
         functions.add("Percentages Calculator")
-        functions.add("Make me stronger guide")
+        functions.add("Submit new feature request")
     }
 }
