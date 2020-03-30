@@ -1,5 +1,7 @@
 package dev.lukeb.thefireground
 
+import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Adapter
@@ -14,9 +16,11 @@ class MainActivity : AppCompatActivity() {
 
     private var functions: ArrayList<String> = ArrayList<String>()
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         linearLayoutManager = LinearLayoutManager(this)
         functionsRecyclerAdapter = FunctionsRecyclerAdapter(this, functions)

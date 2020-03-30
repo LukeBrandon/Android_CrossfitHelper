@@ -1,5 +1,7 @@
 package dev.lukeb.thefireground.PercentagesCalculator
 
+import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
@@ -24,9 +26,11 @@ class PercentagesCalculatorActivity : AppCompatActivity() {
     private var shouldRound: Boolean = false
     var percentages: ArrayList<Int> =  arrayListOf()
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_percentages_calculator)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         presenter = PercentagesCalculatorPresenter(this)
 
